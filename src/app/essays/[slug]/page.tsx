@@ -3,21 +3,47 @@ import GlassCard from "@/components/GlassCard";
 import {
   predictionMarketsKShapedEconomyMeta,
   predictionMarketsKShapedEconomyContent,
+  theMetaverseAlreadyHappenedMeta,
+  theMetaverseAlreadyHappenedContent,
+  automatedKalshiSportsTraderMeta,
+  automatedKalshiSportsTraderContent,
+  theyBuiltTheWrongMetaverseMeta,
+  theyBuiltTheWrongMetaverseContent,
 } from "@/content/essays";
 
-const essayMap: Record<string, { meta: typeof predictionMarketsKShapedEconomyMeta; content: string }> = {
+type EssayMeta = {
+  slug: string;
+  title: string;
+  subtitle?: string;
+  excerpt: string;
+  date: string;
+  readTime: string;
+  tags: string[];
+};
+
+const essayMap: Record<string, { meta: EssayMeta; content: string }> = {
   "prediction-markets-k-shaped-economy": {
     meta: predictionMarketsKShapedEconomyMeta,
     content: predictionMarketsKShapedEconomyContent,
   },
+  "the-metaverse-already-happened": {
+    meta: theMetaverseAlreadyHappenedMeta,
+    content: theMetaverseAlreadyHappenedContent,
+  },
+  "automated-kalshi-sports-trader": {
+    meta: automatedKalshiSportsTraderMeta,
+    content: automatedKalshiSportsTraderContent,
+  },
+  "they-built-the-wrong-metaverse": {
+    meta: theyBuiltTheWrongMetaverseMeta,
+    content: theyBuiltTheWrongMetaverseContent,
+  },
 };
 
 function renderMarkdown(raw: string) {
-  // Minimal markdown → JSX: headings, bold, italic, bullets, paragraphs
   const lines = raw.trim().split("\n");
   const elements: React.ReactNode[] = [];
   let key = 0;
-
   let listBuffer: string[] = [];
 
   function flushList() {
@@ -47,20 +73,22 @@ function renderMarkdown(raw: string) {
     }
     flushList();
 
-    if (line.startsWith("## ")) {
-      elements.push(
-        <h2 key={key++} className="text-2xl font-bold mt-10 mb-4" style={{ color: "var(--text-primary)" }}>
-          {line.replace("## ", "")}
-        </h2>
-      );
-    } else if (line.startsWith("### ")) {
+    if (line.startsWith("### ")) {
       elements.push(
         <h3 key={key++} className="text-xl font-semibold mt-8 mb-3" style={{ color: "var(--text-primary)" }}>
           {line.replace("### ", "")}
         </h3>
       );
+    } else if (line.startsWith("## ")) {
+      elements.push(
+        <h2 key={key++} className="text-2xl font-bold mt-10 mb-4" style={{ color: "var(--text-primary)" }}>
+          {line.replace("## ", "")}
+        </h2>
+      );
     } else if (line.trim() === "") {
       continue;
+    } else if (line.trim() === "---") {
+      elements.push(<hr key={key++} className="my-8 border-white/10" />);
     } else {
       elements.push(
         <p
