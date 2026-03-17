@@ -12,7 +12,7 @@ const essays = [
   {
     slug: "automated-kalshi-sports-trader",
     title: "I Built an AI-Powered Sports Trading Bot — Here's What Actually Happened",
-    excerpt: "A garden center owner, a prediction market exchange, and a fleet of AI agents walk into a bar. The bot doesn't panic. The bot follows the rules. The bot was right.",
+    excerpt: "A small business owner, a prediction market exchange, and a fleet of AI agents walk into a bar. The bot doesn't panic. The bot follows the rules. The bot was right.",
     date: "Mar 17, 2026",
     readTime: "12 min read",
     tags: ["kalshi", "trading", "automation", "build-log"],

@@ -17,11 +17,11 @@ export default function Navigation() {
     <nav className="fixed top-0 left-0 right-0 z-50">
       <div className="glass-strong mx-4 mt-4 px-6 py-3 flex items-center justify-between rounded-2xl">
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center text-xs font-bold text-white group-hover:shadow-lg group-hover:shadow-cyan-500/20 transition-shadow">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#8a7d65] to-[#5a5a6a] flex items-center justify-center text-xs font-bold text-white/80 group-hover:shadow-lg group-hover:shadow-[#8a7d65]/15 transition-shadow">
             M
           </div>
-          <span className="text-sm font-semibold tracking-wide" style={{ color: 'var(--text-primary)' }}>
-            METAVERSAL<span className="text-cyan-400">.SPACE</span>
+          <span className="text-sm font-semibold tracking-wider text-[#8a8a95]">
+            METAVERSAL<span className="text-[#a0a0a0]">.SPACE</span>
           </span>
         </Link>
 
@@ -34,8 +34,8 @@ export default function Navigation() {
                 href={item.href}
                 className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
                   isActive
-                    ? 'bg-white/10 text-cyan-400 glow-cyan'
-                    : 'text-gray-400 hover:text-gray-200 hover:bg-white/5'
+                    ? 'bg-white/5 text-[#a0a0a0]'
+                    : 'text-[#5a5a6a] hover:text-[#8a8a95] hover:bg-white/3'
                 }`}
               >
                 {item.label}

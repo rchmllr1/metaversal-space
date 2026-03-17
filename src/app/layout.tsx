@@ -28,10 +28,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.variable} font-sans antialiased gradient-mesh`}>
+      <body className={`${inter.variable} font-sans antialiased gradient-mesh`} style={{ background: '#030308' }}>
         <ParticleField />
         <Navigation />
-        <main className="relative z-10 pt-20">
+        <main className="relative pt-20" style={{ zIndex: 1 }}>
           {children}
         </main>
       </body>

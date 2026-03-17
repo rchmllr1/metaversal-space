@@ -1,6 +1,5 @@
 import GlassCard from "@/components/GlassCard";
 
-// Placeholder thought stream data
 const thoughts = [
   {
     id: 1,
@@ -13,7 +12,7 @@ const thoughts = [
   {
     id: 2,
     date: "Mar 17, 2026",
-    text: "Built an automated sports trading bot on Kalshi. It watches live games, spots mispriced favorites, and trades while I'm selling perennials at the garden center. The edge is thin but real — and the bot doesn't panic.",
+    text: "Built an automated sports trading bot on Kalshi. It watches live games, spots mispriced favorites, and trades while I'm doing other things. The edge is thin but real — and the bot doesn't panic.",
     tags: ["kalshi", "trading", "automation"],
     hasConnections: true,
     connectionCount: 2,
@@ -42,19 +41,22 @@ export default function Home() {
       {/* Hero Section */}
       <section className="flex flex-col items-center justify-center min-h-[85vh] px-6 text-center">
         <div className="max-w-3xl">
-          <p className="text-sm uppercase tracking-[0.3em] text-cyan-400/70 mb-6 animate-fade-in-up">
+          <p className="text-sm uppercase tracking-[0.3em] text-[#7a7a6a]/50 mb-6 animate-fade-in-up">
             Enter the space
           </p>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up leading-tight">
-            <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-              The aliens were never out there.
+          <h1 className="text-3xl md:text-5xl font-bold mb-6 animate-fade-in-up leading-tight">
+            <span className="text-[#b8b8cc]">
+              We thought we&apos;d have to travel to distant stars or alternate dimensions to find alien intelligence.
             </span>
             <br />
-            <span style={{ color: 'var(--text-primary)' }}>
-              We built them right here.
+            <span className="bg-gradient-to-r from-[#8a7d65] via-[#a0a0a0] to-[#8a7d65] bg-clip-text text-transparent">
+              Turns out, we built them right here
+            </span>
+            <span className="text-[#b8b8cc]">
+              {' '}— in our own metaverse.
             </span>
           </h1>
-          <p className="text-lg md:text-xl mb-10 animate-fade-in-up-delay-1" style={{ color: 'var(--text-secondary)' }}>
+          <p className="text-lg md:text-xl text-[#6a6a85] mb-10 animate-fade-in-up-delay-1">
             A living, agent-powered space where ideas connect themselves. 
             Watch autonomous AI agents think, trade, build, and evolve — in real time.
           </p>
@@ -65,10 +67,9 @@ export default function Home() {
               <input
                 type="email"
                 placeholder="Subscribe to my brain"
-                className="flex-1 bg-transparent px-4 py-3 text-sm outline-none placeholder:text-gray-500"
-                style={{ color: 'var(--text-primary)' }}
+                className="flex-1 bg-transparent px-4 py-3 text-sm text-[#b8b8cc] outline-none placeholder:text-[#3d3d55]"
               />
-              <button className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white text-sm font-semibold rounded-xl hover:opacity-90 transition-opacity whitespace-nowrap">
+              <button className="px-6 py-3 bg-[#8a7d65]/20 border border-[#8a7d65]/30 text-[#a0a0a0] text-sm font-medium rounded-xl hover:bg-[#8a7d65]/30 transition-all whitespace-nowrap">
                 Enter →
               </button>
             </div>
@@ -77,8 +78,8 @@ export default function Home() {
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 animate-float">
-          <div className="w-6 h-10 rounded-full border-2 border-white/20 flex items-start justify-center p-2">
-            <div className="w-1 h-2 bg-cyan-400 rounded-full animate-pulse" />
+          <div className="w-6 h-10 rounded-full border-2 border-white/10 flex items-start justify-center p-2">
+            <div className="w-1 h-2 bg-[#00a8cc]/60 rounded-full animate-pulse" />
           </div>
         </div>
       </section>
@@ -86,15 +87,15 @@ export default function Home() {
       {/* Thought Stream */}
       <section className="px-6 pb-24 max-w-4xl mx-auto">
         <div className="flex items-center gap-4 mb-12">
-          <h2 className="text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
+          <h2 className="text-2xl font-bold text-[#b8b8cc] tracking-wide">
             Thought Stream
           </h2>
           <div className="flex-1 neon-line" />
           <div className="flex gap-2">
-            <button className="px-3 py-1 text-xs rounded-lg bg-cyan-400/10 text-cyan-400 border border-cyan-400/20">
+            <button className="px-3 py-1 text-xs rounded-lg bg-[#8a7d65]/10 text-[#8a7d65] border border-[#8a7d65]/20">
               Latest
             </button>
-            <button className="px-3 py-1 text-xs rounded-lg text-gray-500 hover:text-gray-300 border border-white/5 hover:border-white/10 transition-colors">
+            <button className="px-3 py-1 text-xs rounded-lg text-[#3d3d55] hover:text-[#6a6a85] border border-white/5 hover:border-white/10 transition-colors">
               Connected
             </button>
           </div>
@@ -109,27 +110,26 @@ export default function Home() {
             >
               <GlassCard glow={thought.hasConnections}>
                 <div className="flex items-start justify-between mb-3">
-                  <span className="text-xs" style={{ color: 'var(--text-muted)' }}>
+                  <span className="text-xs text-[#3d3d55]">
                     {thought.date}
                   </span>
                   {thought.hasConnections && (
                     <div className="flex items-center gap-1.5">
-                      <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse-glow" />
-                      <span className="text-xs text-cyan-400/70">
+                      <div className="w-2 h-2 rounded-full bg-[#8a7d65] animate-pulse-glow" />
+                      <span className="text-xs text-[#8a7d65]/60">
                         {thought.connectionCount} connections
                       </span>
                     </div>
                   )}
                 </div>
-                <p className="text-base leading-relaxed mb-4" style={{ color: 'var(--text-primary)' }}>
+                <p className="text-base leading-relaxed mb-4 text-[#b8b8cc]">
                   {thought.text}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {thought.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2.5 py-1 text-xs rounded-lg bg-white/5 border border-white/5"
-                      style={{ color: 'var(--text-muted)' }}
+                      className="px-2.5 py-1 text-xs rounded-lg bg-white/5 border border-white/5 text-[#3d3d55]"
                     >
                       #{tag}
                     </span>
