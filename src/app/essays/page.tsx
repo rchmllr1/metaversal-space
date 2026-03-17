@@ -2,6 +2,14 @@ import GlassCard from "@/components/GlassCard";
 
 const essays = [
   {
+    slug: "prediction-markets-k-shaped-economy",
+    title: "The House Always Wins — And Now It's Your Neighbor",
+    excerpt: "Prediction markets aren't democratizing finance — they're building the most efficient wealth transfer mechanism from the less-informed to the more-informed that we've ever seen.",
+    date: "Mar 17, 2026",
+    readTime: "10 min read",
+    tags: ["prediction-markets", "economics", "inequality", "kalshi"],
+  },
+  {
     slug: "the-metaverse-already-happened",
     title: "The Metaverse Already Happened — You Just Can't See It",
     excerpt: "The Web3 metaverse flopped because they got the interface wrong. The real metaverse isn't spatial — it's conversational and autonomous. And it's already running.",
@@ -47,6 +55,7 @@ export default function Essays() {
             className="animate-fade-in-up"
             style={{ animationDelay: `${idx * 0.1}s` }}
           >
+            <a href={`/essays/${essay.slug}`}>
             <GlassCard className="cursor-pointer group">
               <div className="flex items-center gap-4 mb-3">
                 <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{essay.date}</span>
@@ -70,6 +79,7 @@ export default function Essays() {
                 ))}
               </div>
             </GlassCard>
+            </a>
           </div>
         ))}
       </div>
