@@ -67,7 +67,7 @@ export default function About() {
             {[
               { label: "𝕏 / Twitter", href: "#" },
               { label: "GitHub", href: "#" },
-              { label: "Email", href: "mailto:rchmllr1@gmail.com" },
+              { label: "Email", href: "#" },
             ].map((link) => (
               <a
                 key={link.label}
