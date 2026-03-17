@@ -11,10 +11,7 @@ export default function About() {
           </div>
         </div>
         
-        <h1 className="text-4xl font-bold mb-2 animate-fade-in-up text-[#b8b8cc]">
-          Rich Miller
-        </h1>
-        <p className="text-lg animate-fade-in-up-delay-1 text-[#6a6a85]">
+        <p className="text-lg animate-fade-in-up text-[#6a6a85]">
           Builder. Operator. Observer of digital wildlife.
         </p>
         <div className="neon-line mt-8 max-w-xs mx-auto" />

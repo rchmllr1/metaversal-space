@@ -43,7 +43,7 @@ const projects = [
   },
   {
     title: "Digital Twin",
-    description: "AI-powered chat widget trained on all published content. Visitors ask questions and get answers as Rich — surfacing related thoughts, generating new connections, spanning the entire knowledge base.",
+    description: "AI-powered chat widget trained on all published content. Visitors ask questions and get answers from the author — surfacing related thoughts, generating new connections, spanning the entire knowledge base.",
     status: "Planned",
     statusColor: "text-yellow-400 bg-yellow-400/10 border-yellow-400/20",
     tags: ["rag", "claude", "chat", "digital-twin"],
